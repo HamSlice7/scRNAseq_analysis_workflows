@@ -102,5 +102,8 @@ plotTSNE(sce.pbmc, colour_by = "label")
 
 ##Interpretation
 markers <- findMarkers(sce.pbmc, pval.type="some", direction = "up")
-marker.set <- markers[["2"]]
+marker.set <- markers[["1"]]
 as.data.frame(marker.set[1:30,1:3])
+
+#Distribution of expression values for monocyte and macrophage markers across clusters in the PBMC dataset
+plotExpression(sce.pbmc, features = c("CD14", "CD68", "MNDA", "FCGR3A"), x = 'label', colour_by = 'label')
